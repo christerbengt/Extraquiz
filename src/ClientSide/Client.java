@@ -36,4 +36,8 @@ public class Client implements Runnable {
             e.printStackTrace();
         }
     }
+    public static void main(String[] args) {
+        Client client = new Client("localhost", 60601);
+        client.connectAndSend("Hello, Server");
+    }
 }

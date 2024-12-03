@@ -40,4 +40,16 @@ public class Server implements Runnable {
             }
         }
     }
+    public void stop() {
+        running = false;
+        try {
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        Server server = new Server(60601);
+        server.start();
+    }
 }
